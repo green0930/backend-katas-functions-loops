@@ -8,26 +8,37 @@ __author__ = "???"
 
 def add(x, y):
     """Add two integers."""
-    # your code here
-    return
+    return x + y
+    print(add(2, 4))
 
 
 def multiply(x, y):
     """Multiply x with y using the add() function above."""
-    # your code here
-    return
+    total = 0
+    for i in range(abs(y)):
+        total = add(x, total)
+    if y < 0:
+        return -total
+    return total
+    print(multiply(6, -8))
 
 
 def power(x, n):
     """Raise x to power n, where n >= 0, using the functions above."""
-    # your code here
-    return
+    total = 1
+    for i in range(n):
+        total = multiply(x, total)
+    return total
+    print(power(2, 8))
 
 
 def factorial(x):
     """Compute the factorial of x, where x > 0, using the functions above."""
-    # your code here
-    return
+    fact = 1
+    for i in range(2, x+1):
+        fact = power(x, fact)
+        return fact
+    print(factorial(4))
 
 
 def fibonacci(n):
